@@ -51,7 +51,7 @@ export class AuthController {
         res.cookie('accessToken', data.accessToken, {
           httpOnly: true,
           secure: true,
-          sameSite: 'lax',
+          sameSite: 'none',
           maxAge:
             parseInt(process.env.JWT_ACCESS_TOKEN_EXPIRES_IN || '7d') *
             24 *
@@ -186,7 +186,7 @@ export class AuthController {
         res.cookie('refresh_token', resp.data.refreshToken, {
           httpOnly: true,
           secure: process.env.NODE_ENV !== 'development',
-          sameSite: 'lax',
+          sameSite: 'none',
           maxAge:
             parseInt(process.env.JWT_REFRESH_TOKEN_EXPIRES_IN || '7d') *
             24 *
