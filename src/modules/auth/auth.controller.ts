@@ -186,7 +186,7 @@ export class AuthController {
         res.cookie('refresh_token', resp.data.refreshToken, {
           httpOnly: true,
           secure: process.env.NODE_ENV !== 'development',
-          sameSite: 'none',
+          sameSite: 'lax',
           maxAge:
             parseInt(process.env.JWT_REFRESH_TOKEN_EXPIRES_IN || '7d') *
             24 *
