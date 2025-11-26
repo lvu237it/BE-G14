@@ -20,7 +20,8 @@ async function bootstrap() {
     origin: [
       'http://localhost:3000',
       'https://frontend-asset-and-equipment-repair.vercel.app',
-      process.env.FRONTEND_URL
+      'https://aka-fe-g14.vercel.app',
+      process.env.FRONTEND_URL,
     ],
     credentials: true,
   });
