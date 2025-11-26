@@ -51,7 +51,7 @@ export class AuthController {
         res.cookie('accessToken', data.accessToken, {
           httpOnly: true,
           secure: true,
-          sameSite: 'none',
+          sameSite: 'lax',
           maxAge:
             parseInt(process.env.JWT_ACCESS_TOKEN_EXPIRES_IN || '7d') *
             24 *
